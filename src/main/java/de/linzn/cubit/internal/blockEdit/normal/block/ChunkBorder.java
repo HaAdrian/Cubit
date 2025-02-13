@@ -178,7 +178,8 @@ public class ChunkBorder implements Runnable {
         set.add(Material.OAK_LEAVES);
         set.add(Material.SPRUCE_LEAVES);
         set.add(Material.CAKE);
-        set.add(Material.GRASS);
+        set.add(Material.SHORT_GRASS);
+        set.add(Material.TALL_GRASS);
         set.add(Material.CAMPFIRE);
         set.add(Material.CANDLE);
         set.add(Material.DANDELION);

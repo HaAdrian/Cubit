@@ -5,7 +5,7 @@ description: A worldguard region manager for bukkit servers
 author: Kekshaus
 load: POSTWORLD
 depend: [ WorldEdit, WorldGuard, Vault ]
-api-version: 1.13
+api-version: 1.20
 
 commands:
   cubit:

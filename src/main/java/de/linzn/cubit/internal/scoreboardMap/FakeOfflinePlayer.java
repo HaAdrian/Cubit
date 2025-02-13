@@ -11,13 +11,14 @@
 
 package de.linzn.cubit.internal.scoreboardMap;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.Statistic;
+import org.bukkit.*;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.profile.PlayerProfile;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 
@@ -44,12 +45,32 @@ public class FakeOfflinePlayer implements OfflinePlayer {
         return null;
     }
 
+    @Override
+    public PlayerProfile getPlayerProfile() {
+        return null;
+    }
+
     public long getFirstPlayed() {
         return 0;
     }
 
     public boolean isBanned() {
         return false;
+    }
+
+    @Override
+    public BanEntry<PlayerProfile> ban(String s, Date date, String s1) {
+        return null;
+    }
+
+    @Override
+    public BanEntry<PlayerProfile> ban(String s, Instant instant, String s1) {
+        return null;
+    }
+
+    @Override
+    public BanEntry<PlayerProfile> ban(String s, Duration duration, String s1) {
+        return null;
     }
 
     @Deprecated
@@ -70,6 +91,11 @@ public class FakeOfflinePlayer implements OfflinePlayer {
     }
 
     public Location getBedSpawnLocation() {
+        return null;
+    }
+
+    @Override
+    public Location getRespawnLocation() {
         return null;
     }
 
@@ -161,6 +187,16 @@ public class FakeOfflinePlayer implements OfflinePlayer {
     @Override
     public void setStatistic(Statistic statistic, EntityType entityType, int i) {
 
+    }
+
+    @Override
+    public Location getLastDeathLocation() {
+        return null;
+    }
+
+    @Override
+    public Location getLocation() {
+        return null;
     }
 
     public boolean isOnline() {

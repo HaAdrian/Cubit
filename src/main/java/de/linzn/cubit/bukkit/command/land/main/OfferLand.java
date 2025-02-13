@@ -16,7 +16,7 @@ import de.linzn.cubit.bukkit.plugin.CubitBukkitPlugin;
 import de.linzn.cubit.internal.cubitRegion.CubitType;
 import de.linzn.cubit.internal.cubitRegion.region.CubitLand;
 import de.linzn.cubit.internal.dataBase.OfferData;
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -87,7 +87,7 @@ public class OfferLand implements ICommand {
         }
 
         if (args.length >= 2) {
-            if (!NumberUtils.isNumber(args[1])) {
+            if (!NumberUtils.isDigits(args[1])) {
                 sender.sendMessage(plugin.getYamlManager().getLanguage().noNumberFound);
                 return true;
             }
