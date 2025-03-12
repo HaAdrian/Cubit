@@ -30,6 +30,7 @@ public class LanguageYaml {
     public String errorNoPermission;
     public String errorNoLandPermission;
     public String errorNoLandFound;
+    public String errorBiomeNotFound;
     public String errorNoValidLandFound;
     public String noNumberFound;
     public String noEnabledWorld;
@@ -237,6 +238,7 @@ public class LanguageYaml {
         errorNoLandPermission = this.getLanguageString("errorNoLandPermission",
                 "&cYou don have access for region {regionID}! :(");
         errorNoLandFound = this.getLanguageString("errorNoLandFound", "&cNo region found here! Sorry :(");
+        errorBiomeNotFound = this.getLanguageString("errorBiomeNotFound", "&cThis biome is not found or not allowed! Sorry :(");
         errorNoValidLandFound = this.getLanguageString("errorNoLandFound",
                 "&cNo valid {type} region found here! Sorry :(");
         noNumberFound = this.getLanguageString("noNumberFound", "&cThis is not a valid number");

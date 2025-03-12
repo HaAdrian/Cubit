@@ -14,13 +14,15 @@ package de.linzn.cubit.bukkit.command.universal;
 import de.linzn.cubit.bukkit.command.ICommand;
 import de.linzn.cubit.bukkit.plugin.CubitBukkitPlugin;
 import de.linzn.cubit.internal.cubitRegion.CubitType;
-import org.bukkit.block.Biome;
+import org.bukkit.Registry;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.util.OldEnum;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListBiomesUniversal implements ICommand {
 
@@ -49,12 +51,7 @@ public class ListBiomesUniversal implements ICommand {
             return true;
         }
 
-        Biome[] biomes = Biome.values();
-
-        List<String> biomeList = new ArrayList<>();
-        for (Biome biome : biomes) {
-            biomeList.add(biome.name());
-        }
+        List<String> biomeList = Registry.BIOME.stream().filter(biome -> !biome.name().contains("nether") && !biome.name().contains("end")).map(OldEnum::name).collect(Collectors.toList()); //Registry.BIOME.stream().filter(biome -> biome.getKeyOrNull().toString().contains("nether")).map(biome -> biome.getKeyOrNull().getNamespace()).collect(Collectors.toList());
 
         sender.sendMessage(plugin.getYamlManager().getLanguage().landBiomeListHeader);
         sender.sendMessage(biomeList.toString().replace("[", " ").replace("]", " "));

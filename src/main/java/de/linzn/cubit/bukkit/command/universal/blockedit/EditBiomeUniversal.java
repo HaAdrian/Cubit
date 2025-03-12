@@ -95,6 +95,11 @@ public class EditBiomeUniversal implements ICommand {
         /* End confirm task */
 
         Biome biome = Biome.valueOf(args[1].toUpperCase());
+        if(biome.name().contains("nether") || biome.name().contains("end")) {
+            sender.sendMessage(this.plugin.getYamlManager().getLanguage().errorBiomeNotFound);
+            return true;
+        }
+
         final Chunk chunk = loc.getChunk();
         CubitLand cubitLand = plugin.getRegionManager().praseRegionData(loc.getWorld(), chunk.getX(), chunk.getZ());
 
