@@ -51,7 +51,7 @@ public class ListBiomesUniversal implements ICommand {
             return true;
         }
 
-        List<String> biomeList = Registry.BIOME.stream().filter(biome -> !biome.name().contains("nether") && !biome.name().contains("end")).map(OldEnum::name).collect(Collectors.toList()); //Registry.BIOME.stream().filter(biome -> biome.getKeyOrNull().toString().contains("nether")).map(biome -> biome.getKeyOrNull().getNamespace()).collect(Collectors.toList());
+        List<String> biomeList = Registry.BIOME.stream().filter(biome -> !biome.name().toLowerCase().contains("nether") && !biome.name().toLowerCase().contains("end")).map(OldEnum::name).collect(Collectors.toList()); //Registry.BIOME.stream().filter(biome -> biome.getKeyOrNull().toString().contains("nether")).map(biome -> biome.getKeyOrNull().getNamespace()).collect(Collectors.toList());
 
         sender.sendMessage(plugin.getYamlManager().getLanguage().landBiomeListHeader);
         sender.sendMessage(biomeList.toString().replace("[", " ").replace("]", " "));
